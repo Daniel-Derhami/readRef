@@ -37,6 +37,42 @@ public class Main {
 		fIndex = sp.charAt(0);
 		// For saving the currency : EUR, USD or SEK
 		String cor = new String();
+
+		// First if for checking the validation of merchant
+		if (Main.isMerchantValid()) {
+			switch (corp) {
+			case "EU":
+				cor = "EUR";
+				Main.isStringDouble(cor);
+				break;
+			case "US":
+				cor = "USD";
+				Main.isStringDouble(cor);
+				break;
+			case "SE":
+				cor = "SEK";
+				Main.isStringDouble(cor);
+
+				break;
+			default:
+				// Happens when the currency is NOT valid
+				System.out.println("Unable to parse " + str + "(currency ‘"
+						+ corp + "’ invalid).");
+			}
+		}
 	}
+
+	private static void isStringDouble(String cor2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static boolean isMerchantValid() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+	
 
 }
