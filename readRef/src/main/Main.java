@@ -117,8 +117,13 @@ public class Main {
 	}
 
 	private static boolean isMerchantValid() {
-		// TODO Auto-generated method stub
-		return false;
+		if (fp.matches("BOS")) {
+			return true;
+		} else {
+			System.out.println("Unable to parse " + str + "(merchant ‘" + fp
+					+ "’ invalid).");
+			return false;
+		}
 	}
 	
 	
