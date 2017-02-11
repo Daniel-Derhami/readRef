@@ -111,9 +111,21 @@ public class Main {
 		
 	}
 
-	private static String decode(String sp2, String string) {
-		// TODO Auto-generated method stub
-		return null;
+	static long decode(String s, String symbols) {
+		final int B = symbols.length();
+		long num = 0;
+		try {
+			//remove digits at the beginning of reference
+			sp = sp.replaceAll("\\d", "");
+			for (char ch : sp.toCharArray()) {
+				num *= B;
+				num += symbols.indexOf(ch);
+			}
+			return num;
+		} catch (NumberFormatException ex) {
+			return (Long) null;
+		}
+
 	}
 
 	private static boolean isMerchantValid() {
