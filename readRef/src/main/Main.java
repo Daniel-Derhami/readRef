@@ -1,3 +1,8 @@
+/*
+ * Main.java
+ * Date: Feb 2017
+ * Author: Daniel Derhami
+ */
 package main;
 
 public class Main {
