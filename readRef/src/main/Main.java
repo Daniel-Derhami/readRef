@@ -62,7 +62,20 @@ public class Main {
 		}
 	}
 
-	private static void isStringDouble(String cor2) {
+	private static boolean isStringDouble(String cor2) {
+		try {
+			Double.parseDouble(string2);
+			refrenceCheck(cor);
+			return true;
+		} catch (NumberFormatException ex) {
+			// Error message for amount problem
+			System.out.println("Unable to parse " + str + " (amount " + string2
+					+ " invalid).");
+			return false;
+		}
+	}
+
+	private static void refrenceCheck(String cor2) {
 		// TODO Auto-generated method stub
 		
 	}
