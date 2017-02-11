@@ -106,9 +106,7 @@ public class Main {
 						+ string2 + "," + cor);
 			}
 		}
-		return false;
-	
-		
+		return false;	
 	}
 
 	static long decode(String s, String symbols) {
@@ -125,7 +123,6 @@ public class Main {
 		} catch (NumberFormatException ex) {
 			return (Long) null;
 		}
-
 	}
 
 	private static boolean isMerchantValid() {
@@ -136,9 +133,5 @@ public class Main {
 					+ "’ invalid).");
 			return false;
 		}
-	}
-	
-	
-	
-
+	}	
 }
