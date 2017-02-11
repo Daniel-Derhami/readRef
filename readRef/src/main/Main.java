@@ -6,6 +6,8 @@
 package main;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 	static String fp;
@@ -75,9 +77,43 @@ public class Main {
 		}
 	}
 
-	private static void refrenceCheck(String cor2) {
-		// TODO Auto-generated method stub
+	private static boolean refrenceCheck(String cor2) {
+
+		if (fIndex == '0') {
+			Pattern p = Pattern.compile("[B,D,I,L,O,Q,S,V]",
+					Pattern.CASE_INSENSITIVE);
+			Matcher m = p.matcher(sp);
+			boolean b = m.find();
+			if (b) {
+				System.out.println("Unable to parse " + str + " (reference "
+						+ sp + " invalid).");
+			} else {
+				System.out.println(fp + ","
+						+ Main.decode(sp, "123456789ACEFGHJKMNPRTUWXY") + ","
+						+ string2 + "," + cor);
+			}
+		} else if (fIndex == '2') {
+			Pattern p2 = Pattern.compile("[B,D,I,L,O,Q,S,U,V]",
+					Pattern.CASE_INSENSITIVE);
+			Matcher m2 = p2.matcher(sp);
+			boolean b2 = m2.find();
+			if (b2) {
+				System.out.println("Unable to parse " + str + " (reference "
+						+ sp + " invalid).");
+			} else {
+				System.out.println(fp + ","
+						+ Main.decode(sp, "234679ACEFGHJKMNPRTWXY") + ","
+						+ string2 + "," + cor);
+			}
+		}
+		return false;
+	
 		
+	}
+
+	private static String decode(String sp2, String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private static boolean isMerchantValid() {
